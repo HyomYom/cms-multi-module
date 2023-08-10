@@ -1,0 +1,60 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.14'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+repositories {
+    mavenCentral()
+}
+ext {
+    set('springCloudVersion', "2021.0.1")
+}
+bootJar.enabled = false
+subprojects {
+
+    group = 'com.basic'
+    version = '0.0.1-SNAPSHOT'
+    sourceCompatibility = '11'
+
+    apply plugin: 'java'
+    // build.gradle에서 api()를 사용하려면 java-library 사용
+    apply plugin: 'java-library'
+    apply plugin: 'org.springframework.boot'
+    // spring boot dependency를 사용하여 사용중인 부트 버젼에서 자동으로 의존성을 가져온다.
+    apply plugin: 'io.spring.dependency-management'
+
+
+    configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+    }
+
+    dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+        implementation 'org.springframework.boot:spring-boot-starter-security'
+        implementation 'org.springframework.boot:spring-boot-starter-web'
+        compileOnly 'org.projectlombok:lombok'
+        testImplementation 'com.h2database:h2'
+        runtimeOnly 'mysql:mysql-connector-java:8.0.28'
+        implementation 'org.apache.commons:commons-lang3:3.8.1'
+        // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-openfeign
+        implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+        implementation "io.springfox:springfox-boot-starter:3.0.0"
+        implementation 'org.springframework.data:spring-data-envers'
+
+
+        annotationProcessor 'org.projectlombok:lombok'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    }
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
+
+    tasks.named('test') {
+        useJUnitPlatform()
+    }
+}
+

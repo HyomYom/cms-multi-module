@@ -1,0 +1,3 @@
+rootProject.name = 'cms-multi-module'
+include 'user-api'
+include 'domain'
