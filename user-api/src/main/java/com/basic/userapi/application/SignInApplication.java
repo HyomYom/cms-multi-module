@@ -5,7 +5,7 @@ import com.basic.domain.config.JwtAuthenticationProvider;
 import com.basic.userapi.domain.SignInForm;
 import com.basic.userapi.domain.model.Customer;
 import com.basic.userapi.exception.CustomException;
-import com.basic.userapi.service.CustomerService;
+import com.basic.userapi.service.customer.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
