@@ -36,4 +36,5 @@ out/
 ### VS Code ###
 .vscode/
 
-
+###config###
+user-api/src/main/java/com/basic/userapi/config/FeignConfig.java
