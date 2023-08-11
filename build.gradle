@@ -32,7 +32,6 @@ subprojects {
 
     dependencies {
         implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-        implementation 'org.springframework.boot:spring-boot-starter-security'
         implementation 'org.springframework.boot:spring-boot-starter-web'
         compileOnly 'org.projectlombok:lombok'
         testImplementation 'com.h2database:h2'
@@ -43,6 +42,9 @@ subprojects {
         implementation "io.springfox:springfox-boot-starter:3.0.0"
         implementation 'org.springframework.data:spring-data-envers'
 
+        implementation 'io.jsonwebtoken:jjwt-api:0.10.7'
+        runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.10.7'
+        runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.10.7'
 
         annotationProcessor 'org.projectlombok:lombok'
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -56,5 +58,16 @@ subprojects {
     tasks.named('test') {
         useJUnitPlatform()
     }
+}
+
+project(':user-api') { // 컴파일 시 multi-module-database 로딩
+    dependencies {
+        compileOnly project(':domain')
+    }
+}
+
+project(':domain') { // multi-module-databse는 bootJar로 패키징 할 필요 없음
+    bootJar { enabled = false }
+    jar { enabled = true }
 }
 
