@@ -6,7 +6,7 @@ import com.basic.domain.config.JwtAuthenticationProvider;
 import com.basic.userapi.domain.customer.CustomerDto;
 import com.basic.userapi.domain.model.Customer;
 import com.basic.userapi.exception.CustomException;
-import com.basic.userapi.service.CustomerService;
+import com.basic.userapi.service.customer.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

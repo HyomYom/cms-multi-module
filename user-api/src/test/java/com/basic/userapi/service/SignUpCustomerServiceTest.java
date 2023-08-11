@@ -1,7 +1,8 @@
 package com.basic.userapi.service;
 
-import com.cms.domain.SignUpForm;
-import com.cms.domain.model.Customer;
+import com.basic.userapi.domain.SignUpForm;
+import com.basic.userapi.domain.model.Customer;
+import com.basic.userapi.service.customer.SignUpCustomerService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

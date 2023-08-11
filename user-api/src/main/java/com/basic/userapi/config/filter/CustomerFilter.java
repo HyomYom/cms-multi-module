@@ -3,7 +3,7 @@ package com.basic.userapi.config.filter;
 
 import com.basic.domain.common.UserVo;
 import com.basic.domain.config.JwtAuthenticationProvider;
-import com.basic.userapi.service.CustomerService;
+import com.basic.userapi.service.customer.CustomerService;
 import lombok.RequiredArgsConstructor;
 
 import javax.servlet.*;

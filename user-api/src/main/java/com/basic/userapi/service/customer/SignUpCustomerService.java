@@ -1,4 +1,4 @@
-package com.basic.userapi.service;
+package com.basic.userapi.service.customer;
 
 import com.basic.userapi.domain.SignUpForm;
 import com.basic.userapi.domain.model.Customer;
@@ -25,7 +25,7 @@ public class SignUpCustomerService {
         return customerRepository.save(Customer.from(form));
     }
 
-    public boolean isEmailExit(String email) {
+    public boolean isEmailExist(String email) {
         return customerRepository.findByEmail(email.toLowerCase(Locale.ROOT))
                 .isPresent();
     }

@@ -1,4 +1,4 @@
-package com.basic.userapi.service;
+package com.basic.userapi.service.customer;
 
 import com.basic.userapi.domain.model.Customer;
 import com.basic.userapi.domain.repository.CustomerRepository;

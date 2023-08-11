@@ -37,5 +37,5 @@ out/
 .vscode/
 
 ### config ###
-config/FeignConfig
+user-api/src/main/java/com/basic/userapi/config/FeignConfig.java
 
