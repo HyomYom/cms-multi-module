@@ -39,6 +39,8 @@ public class SellerService {
         return sellerRepository.findByEmail(email).isPresent();
     }
 
+
+    @Transactional
     public void verifyEmail(String email, String code) {
         Seller seller = sellerRepository.findByEmail(email)
                 .orElseThrow(() -> new CustomException(NOT_FOUND_USER));
@@ -57,7 +59,7 @@ public class SellerService {
     }
 
     @Transactional
-    public LocalDateTime changeCustomerValidationEmail(Long customerId, String verificationCode) {
+    public LocalDateTime changeSellerValidationEmail(Long customerId, String verificationCode) {
         Optional<Seller> sellerOptional =
                 sellerRepository.findById(customerId);
         if (sellerOptional.isPresent()) {
