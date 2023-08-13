@@ -66,7 +66,7 @@ public class SignUpApplication {
                     .text(getVerificationEmailBody(form.getEmail(), form.getName(), "seller", code))
                     .build();
             log.info("Send Email result : " + mailgunClient.sendMail(sendMailForm).getBody());
-            sellerService.changeCustomerValidationEmail(s.getId(), code);
+            sellerService.changeSellerValidationEmail(s.getId(), code);
             return "회원 가입에 성공하였습니다.";
         }
     }
@@ -84,7 +84,7 @@ public class SignUpApplication {
     private String getVerificationEmailBody(String email, String name, String type, String code) {
         StringBuilder builder = new StringBuilder();
         return builder.append("Hello").append(name).append("! Please Click Link for verification.\n\n")
-                .append("http://localhost:8081/customer/signup/"+ type +"/verifiy?email=")
+                .append("http://localhost:8081/signup/"+ type +"/verify?email=")
                 .append(email)
                 .append("&code=")
                 .append(code).toString();
