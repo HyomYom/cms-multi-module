@@ -62,12 +62,12 @@ subprojects {
 
 project(':user-api') { // 컴파일 시 multi-module-database 로딩
     dependencies {
-        compileOnly project(':domain')
+        implementation project(':domain')
     }
 }
 project(':order-api') { // 컴파일 시 multi-module-database 로딩
     dependencies {
-        compileOnly project(':domain')
+        implementation project(':domain')
     }
 }
 

@@ -15,7 +15,7 @@ public class ExceptionController {
 
     @ExceptionHandler({CustomException.class})
     public ResponseEntity<ExceptionResponse> customRequestException(final CustomException c) {
-        return ResponseEntity.badRequest().body(new ExceptionResponse(c.getMessage(), c.getErrorCode(), c.getStatus()));
+        return ResponseEntity.status(c.getStatus()).body(new ExceptionResponse(c.getMessage(), c.getErrorCode(), c.getStatus()));
     }
 
 //    @ExceptionHandler({ServletException.class})
