@@ -44,5 +44,25 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2dTRDeHFmdTE2SWVPNndyNzVEQjNBQlFTS
 #########################
 
 ### 회원가입 ( 셀러 )
+POST http://localhost:8081/signup/seller
+Content-Type: application/json
+
+{
+  "birth": "2023-08-11",
+  "email": "pagooo@naver.com",
+  "name": "string",
+  "password": "string",
+  "phone": "string"
+}
+
+### 이메일 인증 ( 셀러 )
+GET http://localhost:8081/signup/seller/verify?email=pagooo@naver.com&code=LWbHCJmvcJ
 
 ### 로그인 ( 셀러 )
+POST http://localhost:8081/signin/seller
+Content-Type: application/json
+
+{
+  "email": "pagooo@naver.com",
+  "password": "string"
+}
