@@ -1,7 +1,7 @@
 ### 상품추가
 POST http://localhost:8082/seller/product
 Content-Type: application/json
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMWS9FU0w4SndEQS8vcVdxdmdVR3lIdk54NHA0UzVTZFlxeXdBZWJjSFVJPSIsImp0aSI6ImRraExVenBYMmJ2d1NQdHZYNkNnS0E9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjkyMDk1NDI1LCJleHAiOjE2OTIxODE4MjV9.5KdlnIMNXvR_7aN2dnKLfJ1u3uWI4roGiHt3cMevke4
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMWS9FU0w4SndEQS8vcVdxdmdVR3lIdk54NHA0UzVTZFlxeXdBZWJjSFVJPSIsImp0aSI6ImRraExVenBYMmJ2d1NQdHZYNkNnS0E9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjkyMTIyNTY0LCJleHAiOjE2OTIyMDg5NjR9.8JigbHlSWOzdBzLZ7EecZzNYF9sFJaG4X6IgtAWPTJo
 
 {
   "description": "상품 설명",
@@ -13,7 +13,7 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMWS9FU0w4SndEQS8vcVdxdmdVR3lIdk54N
 ### 상품 아이템 추가
 POST http://localhost:8082/seller/product/item
 Content-Type: application/json
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMWS9FU0w4SndEQS8vcVdxdmdVR3lIdk54NHA0UzVTZFlxeXdBZWJjSFVJPSIsImp0aSI6ImRraExVenBYMmJ2d1NQdHZYNkNnS0E9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjkyMDk1NDI1LCJleHAiOjE2OTIxODE4MjV9.5KdlnIMNXvR_7aN2dnKLfJ1u3uWI4roGiHt3cMevke4
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMWS9FU0w4SndEQS8vcVdxdmdVR3lIdk54NHA0UzVTZFlxeXdBZWJjSFVJPSIsImp0aSI6ImRraExVenBYMmJ2d1NQdHZYNkNnS0E9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjkyMTIyNTY0LCJleHAiOjE2OTIyMDg5NjR9.8JigbHlSWOzdBzLZ7EecZzNYF9sFJaG4X6IgtAWPTJo
 
     {
       "productId": 1,
@@ -21,3 +21,31 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMWS9FU0w4SndEQS8vcVdxdmdVR3lIdk54N
       "name": "애플팬슬",
       "price": 100000
     }
+
+
+### 상품수정
+PUT http://localhost:8082/seller/product
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMWS9FU0w4SndEQS8vcVdxdmdVR3lIdk54NHA0UzVTZFlxeXdBZWJjSFVJPSIsImp0aSI6ImRraExVenBYMmJ2d1NQdHZYNkNnS0E9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjkyMTIyNTY0LCJleHAiOjE2OTIyMDg5NjR9.8JigbHlSWOzdBzLZ7EecZzNYF9sFJaG4X6IgtAWPTJo
+
+{
+  "description": "맥북좋아",
+  "items": [
+
+  ],
+  "id": 1,
+  "name": "맥북프로2"
+}
+
+### 상품 아이템 수정
+PUT http://localhost:8082/seller/product/item
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMWS9FU0w4SndEQS8vcVdxdmdVR3lIdk54NHA0UzVTZFlxeXdBZWJjSFVJPSIsImp0aSI6ImRraExVenBYMmJ2d1NQdHZYNkNnS0E9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjkyMTIyNTY0LCJleHAiOjE2OTIyMDg5NjR9.8JigbHlSWOzdBzLZ7EecZzNYF9sFJaG4X6IgtAWPTJo
+
+{
+  "id":1,
+  "productId": 1,
+  "count": 2,
+  "name": "짭플팬슬",
+  "price": 10
+}
