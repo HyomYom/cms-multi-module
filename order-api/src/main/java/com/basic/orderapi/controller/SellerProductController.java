@@ -1,11 +1,8 @@
-package com.basic.orderapi;
+package com.basic.orderapi.controller;
 
 
 import com.basic.domain.config.JwtAuthenticationProvider;
-import com.basic.orderapi.domain.product.AddProductForm;
-import com.basic.orderapi.domain.product.AddProductItemForm;
-import com.basic.orderapi.domain.product.ProductDto;
-import com.basic.orderapi.domain.product.ProductItemDto;
+import com.basic.orderapi.domain.product.*;
 import com.basic.orderapi.service.ProductItemService;
 import com.basic.orderapi.service.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -30,5 +27,16 @@ public class SellerProductController {
     public ResponseEntity<ProductDto> addProductItem(@RequestHeader(name = "X-AUTH-TOKEN") String token,
                                                      @RequestBody AddProductItemForm form) {
         return ResponseEntity.ok(ProductDto.from(productItemService.addProductItem(provider.getUserVo(token).getId(), form)));
+    }
+    @PutMapping
+    public ResponseEntity<ProductDto> updateProduct(@RequestHeader(name = "X-AUTH-TOKEN") String token,
+                                                    @RequestBody UpdateProductForm form) {
+        return ResponseEntity.ok(ProductDto.from(productService.updateProduct(provider.getUserVo(token).getId(), form)));
+    }
+
+    @PutMapping("/item")
+    public ResponseEntity<ProductItemDto> upadateProductItem(@RequestHeader(name = "X-AUTH-TOKEN") String token,
+                                                     @RequestBody UpdateProductItemForm form) {
+        return ResponseEntity.ok(ProductItemDto.from(productItemService.updateProductItem(provider.getUserVo(token).getId(), form)));
     }
 }
