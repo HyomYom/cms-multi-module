@@ -12,10 +12,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 
 @SpringBootTest
@@ -23,6 +23,8 @@ class ProductServiceTest {
 
     @Autowired
     private ProductService productService;
+    @Autowired
+    private ProductSearchService productSearchService;
     @Autowired
     private ProductRepository productRepository;
 
@@ -71,6 +73,29 @@ class ProductServiceTest {
         productService.deleteProduct(sellerId, result.get().getId());
 
         assertEquals(productRepository.findWithProductItemsById(p.getId()), Optional.empty());
+
+
+    }
+
+    @Test
+    void SEARCH_PRODUCT_TEST() {
+        Long sellerId = 1L;
+        AddProductForm form1 = makeProductForm("나이키 에어포스", "멋집니다.", 3);
+        AddProductForm form2 = makeProductForm("조던 에어포스", "멋집니다.", 3);
+        Product p1 = productService.addProduct(sellerId, form1);
+        Product p2 = productService.addProduct(sellerId, form2);
+        List<Long> list = new ArrayList<>();
+        list.add(p1.getId());
+        list.add(p2.getId());
+        List<Product> airforce = productSearchService.searchByName("에어포스");
+        List<Product> listByProductIds = productSearchService.getListByProductIds(list);
+
+        assertEquals(airforce.size(), 2);
+        assertEquals(airforce.get(0).getName(), "나이키 에어포스");
+        assertEquals(airforce.get(1).getName(), "조던 에어포스");
+
+        assertEquals(listByProductIds.size(), 2);
+        assertEquals(listByProductIds.get(0).getName(), "나이키 에어포스");
 
 
     }

@@ -5,8 +5,6 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 
-import javax.servlet.http.HttpServletRequest;
-
 @RequiredArgsConstructor
 @Getter
 public enum ErrorCode {

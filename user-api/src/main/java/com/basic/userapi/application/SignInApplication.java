@@ -1,6 +1,5 @@
 package com.basic.userapi.application;
 
-import com.basic.domain.common.UserType;
 import com.basic.domain.config.JwtAuthenticationProvider;
 import com.basic.userapi.domain.SignInForm;
 import com.basic.userapi.domain.model.Customer;
@@ -11,7 +10,8 @@ import com.basic.userapi.service.seller.SellerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import static com.basic.domain.common.UserType.*;
+import static com.basic.domain.common.UserType.CUSTOMER;
+import static com.basic.domain.common.UserType.SELLER;
 import static com.basic.userapi.exception.ErrorCode.LOGIN_CHECK_FAIL;
 
 

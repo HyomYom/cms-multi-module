@@ -7,7 +7,7 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMWS9FU0w4SndEQS8vcVdxdmdVR3lIdk54N
   "description": "상품 설명",
   "items": [
   ],
-  "name": "아이패드"
+  "name": "이것은 아이패드 입니다."
 }
 
 ### 상품 아이템 추가
@@ -60,5 +60,19 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMWS9FU0w4SndEQS8vcVdxdmdVR3lIdk54N
 
 ### 상품 아이템 삭제
 DELETE http://localhost:8082/seller/product/item?id=3
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMWS9FU0w4SndEQS8vcVdxdmdVR3lIdk54NHA0UzVTZFlxeXdBZWJjSFVJPSIsImp0aSI6ImRraExVenBYMmJ2d1NQdHZYNkNnS0E9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjkyMjA5OTI0LCJleHAiOjE2OTIyOTYzMjR9.Gjf7WNxw_DQkfCh7c8PlQxxnbPAUhqA2f9wi62BXwb4
+
+
+
+### 상품검색
+GET http://localhost:8082/search/product?name=아이패드
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMWS9FU0w4SndEQS8vcVdxdmdVR3lIdk54NHA0UzVTZFlxeXdBZWJjSFVJPSIsImp0aSI6ImRraExVenBYMmJ2d1NQdHZYNkNnS0E9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjkyMjA5OTI0LCJleHAiOjE2OTIyOTYzMjR9.Gjf7WNxw_DQkfCh7c8PlQxxnbPAUhqA2f9wi62BXwb4
+
+
+
+### 상품 아이템 검색
+GET http://localhost:8082/search/product/detail?productId=2
 Content-Type: application/json
 X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMWS9FU0w4SndEQS8vcVdxdmdVR3lIdk54NHA0UzVTZFlxeXdBZWJjSFVJPSIsImp0aSI6ImRraExVenBYMmJ2d1NQdHZYNkNnS0E9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjkyMjA5OTI0LCJleHAiOjE2OTIyOTYzMjR9.Gjf7WNxw_DQkfCh7c8PlQxxnbPAUhqA2f9wi62BXwb4
