@@ -13,7 +13,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import static com.basic.userapi.exception.ErrorCode.*;
+import static com.basic.userapi.exception.ErrorCode.NOT_FOUND_USER;
 
 @RestController
 @RequestMapping("/customer")

@@ -5,7 +5,6 @@ import com.basic.userapi.domain.model.CustomerBalanceHistory;
 import com.basic.userapi.domain.repository.CustomerBalanceHistoryRepository;
 import com.basic.userapi.domain.repository.CustomerRepository;
 import com.basic.userapi.exception.CustomException;
-import com.basic.userapi.exception.ErrorCode;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

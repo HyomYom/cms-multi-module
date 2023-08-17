@@ -2,7 +2,6 @@ package com.basic.userapi.config.filter;
 
 import com.basic.domain.common.UserVo;
 import com.basic.domain.config.JwtAuthenticationProvider;
-import com.basic.userapi.service.customer.CustomerService;
 import com.basic.userapi.service.seller.SellerService;
 import lombok.RequiredArgsConstructor;
 

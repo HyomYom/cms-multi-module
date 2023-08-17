@@ -2,11 +2,9 @@ package com.basic.userapi.service.seller;
 
 
 import com.basic.userapi.domain.SignUpForm;
-import com.basic.userapi.domain.model.Customer;
 import com.basic.userapi.domain.model.Seller;
 import com.basic.userapi.domain.repository.SellerRepository;
 import com.basic.userapi.exception.CustomException;
-import com.basic.userapi.exception.ErrorCode;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

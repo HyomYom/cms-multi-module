@@ -7,12 +7,9 @@ import com.basic.orderapi.domain.product.UpdateProductForm;
 import com.basic.orderapi.domain.product.UpdateProductItemForm;
 import com.basic.orderapi.domain.repository.ProductRepository;
 import com.basic.orderapi.exception.CustomException;
-import com.basic.orderapi.exception.ErrorCode;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.Optional;
 
 import static com.basic.orderapi.exception.ErrorCode.NOT_FOUND_ITEM;
 import static com.basic.orderapi.exception.ErrorCode.NOT_FOUND_PRODUCT;
