@@ -12,9 +12,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 @SpringBootTest
@@ -45,7 +46,7 @@ class ProductServiceTest {
     void UPDATE_PRODUCT_TEST() {
         Long sellerId = 1L;
         AddProductForm form = makeProductForm("나이키 에어포스", "멋집니다.", 3);
-        Product p = productService.addProduct(sellerId,form);
+        Product p = productService.addProduct(sellerId, form);
 
         UpdateProductForm uForm = makeUpdateProductForm(p.getSellerId(), "나이키 덩크 조던", "훨씬 멋짐.", 3, 0L);
 
@@ -57,6 +58,20 @@ class ProductServiceTest {
 
         assertEquals(result.getName(), "나이키 덩크 조던");
         assertEquals(result.getProductItems().get(0).getName(), "나이키 덩크 조던(신상)");
+
+    }
+
+    @Test
+    void DELETE_PRODUCT_TEST() {
+
+        Long sellerId = 1L;
+        AddProductForm form = makeProductForm("나이키 에어포스", "멋집니다.", 3);
+        Product p = productService.addProduct(sellerId, form);
+        Optional<Product> result = productRepository.findWithProductItemsById(p.getId());
+        productService.deleteProduct(sellerId, result.get().getId());
+
+        assertEquals(productRepository.findWithProductItemsById(p.getId()), Optional.empty());
+
 
     }
 
@@ -86,8 +101,8 @@ class ProductServiceTest {
     private static UpdateProductForm makeUpdateProductForm(Long id, String name, String description, int itemCount, Long itemId) {
         List<UpdateProductItemForm> itemForms = new ArrayList<>();
 
-        if(itemId!=null){
-            itemForms.add(makeUpdateProductItemForm(id, itemId, name+"(신상)", 1000, 10));
+        if (itemId != null) {
+            itemForms.add(makeUpdateProductItemForm(id, itemId, name + "(신상)", 1000, 10));
         }
 
         return UpdateProductForm.builder()
