@@ -1,7 +1,7 @@
 ### 상품추가
 POST http://localhost:8082/seller/product
 Content-Type: application/json
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMWS9FU0w4SndEQS8vcVdxdmdVR3lIdk54NHA0UzVTZFlxeXdBZWJjSFVJPSIsImp0aSI6ImRraExVenBYMmJ2d1NQdHZYNkNnS0E9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjkyMTIyNTY0LCJleHAiOjE2OTIyMDg5NjR9.8JigbHlSWOzdBzLZ7EecZzNYF9sFJaG4X6IgtAWPTJo
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMWS9FU0w4SndEQS8vcVdxdmdVR3lIdk54NHA0UzVTZFlxeXdBZWJjSFVJPSIsImp0aSI6ImRraExVenBYMmJ2d1NQdHZYNkNnS0E9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjkyMjA5OTI0LCJleHAiOjE2OTIyOTYzMjR9.Gjf7WNxw_DQkfCh7c8PlQxxnbPAUhqA2f9wi62BXwb4
 
 {
   "description": "상품 설명",
@@ -13,13 +13,13 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMWS9FU0w4SndEQS8vcVdxdmdVR3lIdk54N
 ### 상품 아이템 추가
 POST http://localhost:8082/seller/product/item
 Content-Type: application/json
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMWS9FU0w4SndEQS8vcVdxdmdVR3lIdk54NHA0UzVTZFlxeXdBZWJjSFVJPSIsImp0aSI6ImRraExVenBYMmJ2d1NQdHZYNkNnS0E9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjkyMTIyNTY0LCJleHAiOjE2OTIyMDg5NjR9.8JigbHlSWOzdBzLZ7EecZzNYF9sFJaG4X6IgtAWPTJo
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMWS9FU0w4SndEQS8vcVdxdmdVR3lIdk54NHA0UzVTZFlxeXdBZWJjSFVJPSIsImp0aSI6ImRraExVenBYMmJ2d1NQdHZYNkNnS0E9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjkyMjA5OTI0LCJleHAiOjE2OTIyOTYzMjR9.Gjf7WNxw_DQkfCh7c8PlQxxnbPAUhqA2f9wi62BXwb4
 
     {
-      "productId": 1,
+      "productId": 4,
       "count": 2,
       "name": "애플팬슬",
-      "price": 100000
+      "price": 10000
     }
 
 
@@ -49,3 +49,16 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMWS9FU0w4SndEQS8vcVdxdmdVR3lIdk54N
   "name": "짭플팬슬",
   "price": 10
 }
+
+
+### 상품삭제
+DELETE http://localhost:8082/seller/product?id=4
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMWS9FU0w4SndEQS8vcVdxdmdVR3lIdk54NHA0UzVTZFlxeXdBZWJjSFVJPSIsImp0aSI6ImRraExVenBYMmJ2d1NQdHZYNkNnS0E9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjkyMjA5OTI0LCJleHAiOjE2OTIyOTYzMjR9.Gjf7WNxw_DQkfCh7c8PlQxxnbPAUhqA2f9wi62BXwb4
+
+
+
+### 상품 아이템 삭제
+DELETE http://localhost:8082/seller/product/item?id=3
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMWS9FU0w4SndEQS8vcVdxdmdVR3lIdk54NHA0UzVTZFlxeXdBZWJjSFVJPSIsImp0aSI6ImRraExVenBYMmJ2d1NQdHZYNkNnS0E9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjkyMjA5OTI0LCJleHAiOjE2OTIyOTYzMjR9.Gjf7WNxw_DQkfCh7c8PlQxxnbPAUhqA2f9wi62BXwb4

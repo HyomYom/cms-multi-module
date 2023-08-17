@@ -28,9 +28,9 @@ public class Product extends BaseEntity {
     private String description;
 
 
-    @Builder.Default
+//    @Builder.Default
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-//    @JoinColumn(name = "product_id")
+    @JoinColumn(name = "product_id")
     private List<ProductItem> productItems = new ArrayList<>();
 
 

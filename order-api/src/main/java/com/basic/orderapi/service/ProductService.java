@@ -12,6 +12,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 import static com.basic.orderapi.exception.ErrorCode.NOT_FOUND_ITEM;
 import static com.basic.orderapi.exception.ErrorCode.NOT_FOUND_PRODUCT;
 
@@ -44,5 +46,14 @@ public class ProductService {
             item.setCount(itemForm.getCount());
         }
         return product;
+    }
+
+
+    @Transactional
+    public void deleteProduct(Long sellerId, Long productId){
+        Product product = productRepository.findBySellerIdAndId(sellerId, productId)
+                .orElseThrow(() -> new CustomException(NOT_FOUND_PRODUCT));
+
+        productRepository.delete(product);
     }
 }
