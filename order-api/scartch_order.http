@@ -7,7 +7,7 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMWS9FU0w4SndEQS8vcVdxdmdVR3lIdk54N
   "description": "상품 설명",
   "items": [
   ],
-  "name": "이것은 아이패드 입니다."
+  "name": "아이패드"
 }
 
 ### 상품 아이템 추가
@@ -16,8 +16,8 @@ Content-Type: application/json
 X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMWS9FU0w4SndEQS8vcVdxdmdVR3lIdk54NHA0UzVTZFlxeXdBZWJjSFVJPSIsImp0aSI6ImRraExVenBYMmJ2d1NQdHZYNkNnS0E9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjkyMjA5OTI0LCJleHAiOjE2OTIyOTYzMjR9.Gjf7WNxw_DQkfCh7c8PlQxxnbPAUhqA2f9wi62BXwb4
 
     {
-      "productId": 4,
-      "count": 2,
+      "productId": 1,
+      "count": 3,
       "name": "애플팬슬",
       "price": 10000
     }
@@ -40,14 +40,14 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMWS9FU0w4SndEQS8vcVdxdmdVR3lIdk54N
 ### 상품 아이템 수정
 PUT http://localhost:8082/seller/product/item
 Content-Type: application/json
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMWS9FU0w4SndEQS8vcVdxdmdVR3lIdk54NHA0UzVTZFlxeXdBZWJjSFVJPSIsImp0aSI6ImRraExVenBYMmJ2d1NQdHZYNkNnS0E9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjkyMTIyNTY0LCJleHAiOjE2OTIyMDg5NjR9.8JigbHlSWOzdBzLZ7EecZzNYF9sFJaG4X6IgtAWPTJo
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMWS9FU0w4SndEQS8vcVdxdmdVR3lIdk54NHA0UzVTZFlxeXdBZWJjSFVJPSIsImp0aSI6ImRraExVenBYMmJ2d1NQdHZYNkNnS0E9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjkyMjcxMzQzLCJleHAiOjE2OTIzNTc3NDN9.nj3FHhoO5vJfJLoV7r7g0iy0ykFA9hInW6qLLx-htqk
 
 {
   "id":1,
   "productId": 1,
-  "count": 2,
-  "name": "짭플팬슬",
-  "price": 10
+  "count": 10,
+  "name": "애플팬슬",
+  "price": 10000
 }
 
 
@@ -76,3 +76,24 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMWS9FU0w4SndEQS8vcVdxdmdVR3lIdk54N
 GET http://localhost:8082/search/product/detail?productId=2
 Content-Type: application/json
 X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMWS9FU0w4SndEQS8vcVdxdmdVR3lIdk54NHA0UzVTZFlxeXdBZWJjSFVJPSIsImp0aSI6ImRraExVenBYMmJ2d1NQdHZYNkNnS0E9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjkyMjA5OTI0LCJleHAiOjE2OTIyOTYzMjR9.Gjf7WNxw_DQkfCh7c8PlQxxnbPAUhqA2f9wi62BXwb4
+
+
+### 카트 추가
+POST http://localhost:8082/customer/cart
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMWS9FU0w4SndEQS8vcVdxdmdVR3lIdk54NHA0UzVTZFlxeXdBZWJjSFVJPSIsImp0aSI6ImRraExVenBYMmJ2d1NQdHZYNkNnS0E9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjkyMjcxMzQzLCJleHAiOjE2OTIzNTc3NDN9.nj3FHhoO5vJfJLoV7r7g0iy0ykFA9hInW6qLLx-htqk
+
+{
+  "description": "상품 설명",
+  "id": 1,
+  "items": [
+    {
+      "count": 3,
+      "id": 1,
+      "name": "애플팬슬",
+      "price": 10000
+    }
+  ],
+  "name": "아이패드",
+  "sellerId": 1
+}
