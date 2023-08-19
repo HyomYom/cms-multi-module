@@ -35,7 +35,7 @@ public class SellerProductController {
     }
 
     @PutMapping("/item")
-    public ResponseEntity<ProductItemDto> upadateProductItem(@RequestHeader(name = "X-AUTH-TOKEN") String token,
+    public ResponseEntity<ProductItemDto> updateProductItem(@RequestHeader(name = "X-AUTH-TOKEN") String token,
                                                      @RequestBody UpdateProductItemForm form) {
         return ResponseEntity.ok(ProductItemDto.from(productItemService.updateProductItem(provider.getUserVo(token).getId(), form)));
     }
