@@ -6,6 +6,7 @@ import com.basic.orderapi.domain.product.AddProductItemForm;
 import com.basic.orderapi.domain.product.UpdateProductItemForm;
 import com.basic.orderapi.domain.repository.ProductItemRepository;
 import com.basic.orderapi.domain.repository.ProductRepository;
+import com.basic.orderapi.domain.repository.ProductRepositoryCustom;
 import com.basic.orderapi.exception.CustomException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -18,6 +19,12 @@ import static com.basic.orderapi.exception.ErrorCode.*;
 public class ProductItemService {
     private final ProductRepository productRepository;
     private final ProductItemRepository productItemRepository;
+
+    @Transactional
+    public ProductItem getProductItem(Long id){
+        return productItemRepository.getReferenceById(id);
+    }
+
 
 
     @Transactional

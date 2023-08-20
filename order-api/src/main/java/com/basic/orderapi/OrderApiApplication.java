@@ -1,6 +1,7 @@
 package com.basic.orderapi;
 
 
+import com.basic.orderapi.application.OrderApplication;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
@@ -15,8 +16,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaAuditing
 @EnableFeignClients
 @SpringBootApplication
-public class OrderApplication {
+public class OrderApiApplication {
     public static void main(String[] args) {
-        SpringApplication.run(OrderApplication.class, args);
+        SpringApplication.run(OrderApiApplication.class, args);
     }
 }
